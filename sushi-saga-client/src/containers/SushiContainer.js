@@ -10,7 +10,14 @@ const SushiContainer = props => {
         {props.sushiList
           .slice(props.currentSushiIdx, props.currentSushiIdx + 4)
           .map((sushi, idx) => {
-            return <Sushi sushi={sushi} key={sushi.id} />;
+            return (
+              <Sushi
+                sushi={sushi}
+                key={sushi.id}
+                eatSushi={sushiObj => props.eatSushi(sushiObj)}
+                eatenSushi={props.eatenSushi}
+              />
+            );
           })}
         <MoreButton addMoreSushi={props.addMoreSushi} />
       </div>

@@ -37,6 +37,13 @@ class App extends Component {
     });
   };
 
+  eatSushi = sushiObj => {
+    this.setState(copyOfCurrentEatenSushi => ({
+      eatenSushi: [...copyOfCurrentEatenSushi.eatenSushi, sushiObj]
+    }));
+    console.log(this.state.eatenSushi);
+  };
+
   render() {
     return (
       <div className="app">
@@ -44,6 +51,8 @@ class App extends Component {
           sushiList={this.state.sushiList}
           addMoreSushi={this.addMoreSushi}
           currentSushiIdx={this.state.currentSushiIdx}
+          eatSushi={sushiObj => this.eatSushi(sushiObj)}
+          eatenSushi={this.state.eatenSushi}
         />
         <Table />
       </div>
