@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       sushiList: [],
       eatenSushi: [],
-      currentSushiIdx: 0
+      currentSushiIdx: 0,
+      amountMoney: 50
     };
   }
 
@@ -37,11 +38,16 @@ class App extends Component {
     });
   };
 
+  // eatSushi = sushiObj => {
+  //   this.setState(copyOfCurrentEatenSushi => ({
+  //     eatenSushi: [...copyOfCurrentEatenSushi.eatenSushi, sushiObj]
+  //   }));
+  // };
+
   eatSushi = sushiObj => {
-    this.setState(copyOfCurrentEatenSushi => ({
-      eatenSushi: [...copyOfCurrentEatenSushi.eatenSushi, sushiObj]
-    }));
-    console.log(this.state.eatenSushi);
+    this.setState({
+      eatenSushi: [...this.state.eatenSushi, sushiObj]
+    });
   };
 
   render() {
@@ -54,7 +60,10 @@ class App extends Component {
           eatSushi={sushiObj => this.eatSushi(sushiObj)}
           eatenSushi={this.state.eatenSushi}
         />
-        <Table />
+        <Table
+          eatenSushi={this.state.eatenSushi}
+          sushiList={this.state.sushiList}
+        />
       </div>
     );
   }

@@ -42,7 +42,8 @@ Inspectors will be coming by to check that our patented Sushi Saga conveyor belt
 
 <!-- 3. Clicking the "More Sushi!" button produces a new set of 4 sushi -->
 
-4. Clicking a sushi on a plate will eat the sushi, causing it to be removed from its plate and an empty plate to appear on the table.
+<!-- 4. Clicking a sushi on a plate will eat the sushi, causing it to be removed from its plate and an empty plate to appear on the table. -->
+
 5. We need to make money! Whenever a sushi is eaten, customers should be automatically charged! Based on a budget decided by you, the developer, the amount of money remaining should go down by the cost of the sushi that was eaten. There is a spot to display this number in the `Table` component
 6. No free meals! Customers cannot eat any sushi that exceeds the amount of money remaining in their balance
 
